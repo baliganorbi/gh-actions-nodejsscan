@@ -7,7 +7,6 @@ disable-default-queries: true
 
 # Specify which queries or query suites to run.
 queries:
-  # 'uses' specifies a predefined query suite.
-  # 'code-scanning/code-quality.qls' is the standard suite for quality checks.
-  # This suite contains queries related to code reliability, maintainability, and readability.
-  - uses: code-scanning/code-quality.qls
+  - uses: codeql/javascript-queries@latest
+    with:
+      suites: javascript-code-quality-extended
