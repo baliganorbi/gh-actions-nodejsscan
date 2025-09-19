@@ -1,0 +1,13 @@
+name: "Code Quality Checks"
+
+# Disable the default set of queries.
+# By default, CodeQL runs a suite of queries that includes security checks.
+# Setting this to true ensures that only the queries/suites you specify below will run.
+disable-default-queries: true
+
+# Specify which queries or query suites to run.
+queries:
+  # 'uses' specifies a predefined query suite.
+  # 'code-scanning/code-quality.qls' is the standard suite for quality checks.
+  # This suite contains queries related to code reliability, maintainability, and readability.
+  - uses: code-scanning/code-quality.qls
