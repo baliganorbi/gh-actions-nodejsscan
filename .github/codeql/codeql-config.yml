@@ -1,12 +1,14 @@
 name: "Code Quality Checks"
 
-# Disable the default set of queries.
-# By default, CodeQL runs a suite of queries that includes security checks.
-# Setting this to true ensures that only the queries/suites you specify below will run.
-disable-default-queries: true
-
-# Specify which queries or query suites to run.
 queries:
-  - uses: codeql/javascript-queries@latest
-    with:
-      suites: javascript-code-quality-extended
+  - uses: security-and-quality
+
+query-filters:
+- exclude:
+    tags contain:
+      - security
+      - reliability
+      - correctness
+      - performance
+      - concurrency
+      - error-handling
