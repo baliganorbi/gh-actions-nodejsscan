@@ -1,10 +1,13 @@
-name: "CodeQL Advanced"
+name: "CodeQL Quality Checks"
 
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.txt'
   workflow_dispatch: 
 
 jobs:
@@ -38,8 +41,7 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
-        # For more details on CodeQL's query packs, refer to: https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-queries-in-ql-packs
-        # queries: security-extended,security-and-quality
+        config-file: ./.github/codeql/codeql-config.yml
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3

@@ -1,0 +1,14 @@
+name: "Code Quality Checks"
+
+queries:
+  - uses: security-and-quality
+
+query-filters:
+- exclude:
+    tags contain:
+      - security
+      - reliability
+      - correctness
+      - performance
+      - concurrency
+      - error-handling
