@@ -1,14 +1,13 @@
 name: "Code Quality Checks"
 
-queries:
-  - uses: security-and-quality
+disable-default-queries: true
 
-query-filters:
-- exclude:
-    tags contain:
-      - security
-      - reliability
-      - correctness
-      - performance
-      - concurrency
-      - error-handling
+packs:
+  javascript:
+    - codeql/javascript-queries
+
+  actions:
+    - codeql/actions-queries
+
+queries:
+  - uses: javascript-code-quality-extended.qls
