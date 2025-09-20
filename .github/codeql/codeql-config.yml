@@ -8,3 +8,6 @@ packs:
 
   actions:
     - codeql/actions-queries
+
+queries:
+  - uses: javascript-code-quality-extended.qls
