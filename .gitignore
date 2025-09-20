@@ -26,3 +26,10 @@ yarn-error.log*
 *.njsproj
 *.sln
 .dccache
+
+# Ignore code analysis databases and custom queries
+codeql-js-db/
+codeql-custom-queries*/
+
+# Ignore analysis results
+results*
